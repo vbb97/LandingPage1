@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+:root {
+    --almostWhite: hsl(0, 0%, 98%);
+    --mediumGray: hsl(0, 0%, 41%);
+    --almostBlack: hsl(0, 0%, 8%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--almostWhite);    ;
+    font-family: 'Epilogue', sans-serif;
+    font-size: 18px;
+}
+
+.open-menu {
+    overflow-y: hidden;
+}
+
+.overlay {
+    display: none;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background-color: rgba(0, 0, 0, .7);
+}
+
+.cabecalho {
+    padding: 24px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cabecalho .acoes {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cabecalho .acoes .barra-navegacao li {
+    list-style: none;
+    color: var(--mediumGray);
+    font-size: 14px;
+}
+
+.cabecalho .acoes .barra-navegacao li a:hover {
+    color: var(--almostBlack);
+}
+
+.cabecalho .acoes .barra-navegacao .menu {
+    display: flex;
+    gap: 32px;
+}
+
+.cabecalho .acoes .barra-navegacao .menu a {
+    color: var(--mediumGray);
+}
+
+.cabecalho .acoes .barra-navegacao .menu .item {
+   position: relative;
+}
+
+.cabecalho .acoes .barra-navegacao .menu .item span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.cabecalho .acoes .barra-navegacao .menu .item span:hover img {
+    transform: rotateX(180deg);
+    transition: .5s;
+}
+
+.cabecalho .acoes .barra-navegacao .menu .item .sub-menu {
+    min-width: 140px;
+    padding: 18px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    z-index: 3;
+    transform: translateX(-50%) rotateX(-90deg);
+    border-radius: 8px;
+    background-color: var(--almostWhite);
+    box-shadow: 0 0 14px 2px rgba(0, 0, 0, .3);
+}
+
+.cabecalho .acoes .barra-navegacao .menu .item:hover .sub-menu {
+    transform: translateX(-50%) rotateX(0);
+    cursor: pointer;
+    transition: ease .4s 125ms;
+}
+
+.cabecalho .acoes .barra-navegacao .menu .item .sub-menu .sub-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cabecalho .acoes .botoes-login {
+    display: flex;
+    gap: 12px;
+}
+
+.cabecalho .acoes .botoes-login .login, .registro {
+    padding: 8px 20px;
+    background-color: var(--almostWhite);
+    color: var(--mediumGray);
+    font-family: 'Epilogue', sans-serif;
+    border-radius: 8px;
+}
+
+.cabecalho .acoes .botoes-login .login {
+    border: none;
+}
+
+.cabecalho .acoes .botoes-login .login:hover {
+    color: var(--almostBlack);
+    cursor: pointer;
+}
+
+.cabecalho .acoes .botoes-login .registro {
+    border: 1.8px solid var(--mediumGray);
+}
+
+.cabecalho .acoes .botoes-login .registro:hover {
+    color: var(--almostBlack);
+    border: 1px solid var(--almostBlack);
+    cursor: pointer;
+}
+
+.cabecalho .menu-mobile {
+    display: none;
+    align-items: center;
+}
+
+.conteudo {
+    padding: 50px 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 48px;
+}
+
+.conteudo .conteudo-principal {
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.conteudo .conteudo-principal .texto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 48px;
+}
+
+.conteudo .conteudo-principal .texto h1 {
+    width: 430px;
+    font-size: 64px;
+}
+
+.conteudo .conteudo-principal .texto p {
+    width: 350px;
+    color: var(--mediumGray);
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.conteudo .conteudo-principal .texto button {
+    padding: 12px 20px;
+    background-color: var(--almostBlack);
+    color: var(--almostWhite);
+    font-family: 'Epilogue', sans-serif;
+    font-weight: bolder;
+    border-radius: 8px;
+    border: 1px solid var(--almostBlack);
+    cursor: pointer;
+    transition: .4s;
+}
+
+.conteudo .conteudo-principal .texto button:hover {
+    background-color: var(--almostWhite);
+    color: var(--almostBlack);
+    border: 1px solid var(--almostBlack);
+    transition: .4s;
+}
+
+.conteudo .conteudo-principal .marcas {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.conteudo .imagem-principal img {
+    width: 400px;
+}
+
+
+@media (max-width: 1115px) {
+    .conteudo {
+        padding: 50px 70px;
+    }
+}
+
+@media (max-width: 1030px) {
+    .conteudo .conteudo-principal .texto {
+        gap: 24px;
+    }
+
+    .conteudo .conteudo-principal .texto h1 {
+        width: 380px;
+        font-size: 56px;
+    }
+
+    .conteudo .imagem-principal img {
+        width: 300px;
+    }
+}
+
+@media (max-width: 868px) {
+    .conteudo {
+        gap: 24px;
+    }
+
+    .conteudo .conteudo-principal .texto h1 {
+        width: 300px;
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 780px) {
+    .cabecalho {
+        padding: 24px;
+        gap: 32px;
+    }
+    
+    .cabecalho .acoes .barra-navegacao li {
+        font-size: 12px;
+    }
+    
+    .cabecalho .acoes .barra-navegacao .menu {
+        display: flex;
+        gap: 18px;
+    }
+
+    .cabecalho .acoes .botoes-login {
+        gap: 8px;
+    }
+    
+    .cabecalho .acoes .botoes-login .login, .registro {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+    
+    .conteudo {
+        padding: 50px;
+    }
+    
+    .conteudo .conteudo-principal .texto p {
+        width: 300px;
+        font-size: 12px;
+        line-height: 18px;
+    }
+    
+    .conteudo .conteudo-principal .texto button {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    .conteudo .conteudo-principal .marcas img {
+        width: 64px;
+    }
+}
+
+@media (max-width: 690px) {
+    .conteudo {
+        padding: 24px;
+        gap: 12px;
+    }
+
+    .conteudo .imagem-principal img {
+        width: 280px;
+    } 
+}
+
+@media (max-width: 630px) {
+    .conteudo {
+        margin-top: 50px;
+    }
+
+    .conteudo .imagem-principal img {
+        width: 250px;
+    }
+}
+
+@media (max-width: 600px) {
+    .active-overlay {
+        display: block;
+    }
+    
+    .cabecalho .acoes {
+        width: auto;
+        padding: 100px 30px;
+        display: none;
+        flex-direction: column;
+        justify-content:flex-start;
+        align-items: flex-start;
+        gap: 32px;
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 30%;
+        background-color: var(--almostWhite);
+        z-index: 1;
+    }
+
+    .cabecalho .active-menu {
+        display: flex;
+    }
+
+    .cabecalho .acoes .barra-navegacao .menu {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .cabecalho .acoes .barra-navegacao li {
+        font-size: 16px;
+    }
+
+    .cabecalho .acoes .barra-navegacao .menu .item .sub-menu {
+        margin-left: 80px;
+        display: none;
+        position: static;
+        box-shadow: none;
+    }
+
+    .cabecalho .acoes .barra-navegacao .menu .item:hover .sub-menu {
+        display: flex;
+    }
+
+    .cabecalho .acoes .botoes-login {
+        flex-direction: column;
+        align-items: center;
+        align-self: center;
+        gap: 8px;
+    }
+    
+    .cabecalho .acoes .botoes-login .login, .registro {
+        padding: 12px 100px;
+        font-size: 14px;
+    }
+
+    .cabecalho .menu-mobile {
+        display: flex;
+        position: absolute;
+        right: 24px;
+        z-index: 2;
+        cursor: pointer;
+    }
+
+    .cabecalho .menu-mobile .open, .close {
+        display: none;
+    }
+
+    .cabecalho .menu-mobile .active {
+        display: block;
+    }
+
+    .conteudo {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .conteudo .imagem-principal img {
+        width: 350px;
+    }
+
+    .conteudo .conteudo-principal {
+        padding-top: 18px;
+        align-items: center;
+        gap: 24px;
+    }
+    
+    .conteudo .conteudo-principal .texto {
+        align-items: center;
+        gap: 24px;
+    }
+    
+    .conteudo .conteudo-principal .texto h1 {
+        font-size: 44px;
+        text-align: center;
+    }
+    
+    .conteudo .conteudo-principal .texto p {
+        text-align: center;
+        font-size: 14px;
+    }
+}

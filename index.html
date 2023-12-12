@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="all">
+  <header class="cabecalho">
+    <img class="logo" src="./images/logo.svg" alt="Logo Snap.">
+    <div id="menu" class="acoes">
+      <nav class="barra-navegacao">
+        <ul class="menu">
+          <li class="item">
+            <span>Features<img src="./images/icon-arrow-down.svg" alt="Flecha para baixo."></span>
+            <ul class="sub-menu">
+              <li class="sub-item"><img src="./images/icon-todo.svg" alt="Logo todo list."><a href="#">Todo List</a></li>
+              <li class="sub-item"><img src="./images/icon-calendar.svg" alt="Logo calendar."><a href="#">Calendar</a></li>
+              <li class="sub-item"><img src="./images/icon-reminders.svg" alt="Logo reminders."><a href="#">Reminders</a></li>
+              <li class="sub-item"><img src="./images/icon-planning.svg" alt="Logo planning."><a href="#">Planning</a></li>
+            </ul>
+          </li>
+          <li class="item">
+            <span>Company<img src="./images/icon-arrow-down.svg" alt="Flecha para baixo."></span>
+            <ul class="sub-menu">
+              <li class="sub-item"><a href="#">History</a></li>
+              <li class="sub-item"><a href="#">Our Team</a></li>
+              <li class="sub-item"><a href="#">Blog</a></li>
+            </ul>
+          </li>
+          <li class="item"><a href="#">Careers</a></li>
+          <li class="item"><a href="#">About</a></li>
+        </ul>
+      </nav>
+      <div class="botoes-login">
+        <button class="login">Login</button>
+        <button class="registro">Registro</button>
+      </div>
+    </div>
+    <div id="menu-mobile" class="menu-mobile">
+      <img id="open-menu" class="open active" src="./images/icon-menu.svg" alt="Ícone de abrir menu.">
+      <img id="close-menu" class="close" src="./images/icon-close-menu.svg" alt="Ícone de fechar menu.">
+    </div>
+  </header>
+
+  <main class="conteudo">
+    <div id="overlay" class="overlay"></div>
+    <section class="conteudo-principal">
+      <div class="texto">
+        <h1>Make remote work</h1>
+        <p>Get your team in sync, no matter your location.
+          Streamline processes, create team rituals, and watch
+          productivity soar.
+        </p>
+        <button>Learn more</button>
+      </div>
+      <div class="marcas">
+        <img src="./images/client-databiz.svg" alt="Logomarca Databiz">
+        <img src="./images/client-audiophile.svg" alt="Logomarca Audiophile">
+        <img src="./images/client-meet.svg" alt="Logomarca Meet">
+        <img src="./images/client-maker.svg" alt="Logomarca Maker">
+      </div>
+    </section>
+    <section class="imagem-principal">
+      <picture>
+        <source srcset="./images/image-hero-desktop.png" media="(min-width: 601px)" />
+        <source srcset="./images/image-hero-mobile.png" media="(max-width: 600px)" />
+        <img class="imagem-principal" src="./images/image-hero-desktop.png" alt="Homem com notebook.">
+      </picture>
+    </section>
+  </main>
+
+  <script>
+    const body = document.getElementById('all');
+
+    const overlay = document.getElementById("overlay");
+    const menu = document.getElementById("menu");
+
+    const iconeMenu = document.getElementById("menu-mobile");
+    const open = document.getElementById("open-menu");
+    const close = document.getElementById("close-menu");
+
+    iconeMenu.addEventListener('click', () => mostraMenu());
+
+    function mostraMenu () {
+      body.classList.toggle('open-menu');
+
+      menu.classList.toggle('active-menu');
+
+      overlay.classList.toggle('active-overlay');
+
+      open.classList.toggle('active');
+      close.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
